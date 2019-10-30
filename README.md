@@ -9,4 +9,5 @@ Change the route loadbalacing algorith from the default Source IP to roundrobin 
 This will enabled testing of application loadbalacing from single workstation.
 
 #oc annotate route/demoapp haproxy.router.openshift.io/balance=roundrobin -n demoproject
+
 #oc annotate route/ab haproxy.router.openshift.io/disable_cookies=true -n demoproject
