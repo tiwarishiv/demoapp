@@ -1,4 +1,4 @@
-# Sample Python Application to demonstrate loadbalancing & various application update strategy in Openshift 
+# Sample Python Application to demonstrate loadbalancing & application update strategies in Openshift 
    - Rolling Updates
    - Blue/Green Deployments
    - A/B Deployments
