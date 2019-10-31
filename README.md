@@ -13,6 +13,10 @@ Create a New Project for the sample application deployment (Optional)
     $ oc new-project demoproject --display-name="Demo Project" --description="Project for demo purpose"
     $ oc project demoproject
 
+Deploy the sample python application
+
+    $ oc new-app python:3.6~https://github.com/dineshsadasivam/demoapp --name=demoapp
+
 Display pods servicing demoapp
 
     $ oc get pods -o wide -l app=demoapp -n demoproject
@@ -23,5 +27,8 @@ This will enabled testing of application loadbalacing from single workstation.
     $ oc annotate route/demoapp haproxy.router.openshift.io/balance=roundrobin -n demoproject
     $ oc annotate route/demoapp haproxy.router.openshift.io/disable_cookies=true -n demoproject
 
+Command to validate load-balancing from CLI 
 
+    $ while true; do curl http://demoapp-demoproject.router.default.svc.cluster.local 2>/dev/null |grep -i version ; done
+    
 
