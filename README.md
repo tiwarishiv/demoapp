@@ -30,6 +30,6 @@ This will enabled testing of application loadbalacing from single workstation.
 
 Command to validate load-balancing from CLI 
 
-    $ while true; do curl http://demoapp-demoproject.router.default.svc.cluster.local 2>/dev/null |grep -i version ; done
+    $ while true ; do curl http://demoapp-demoproject.router.default.svc.cluster.local 2>/dev/null |grep Hello ; done
     
 
