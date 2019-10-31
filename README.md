@@ -7,6 +7,9 @@ https://github.com/openshift/django-ex.git
 
 Create a New Project for the sample application deployment (Optional)
    $ oc new-project demoproject --display-name="Demo Project" --description="Project for demo purpose"
+   
+        $ oc new-project nodejs-echo \
+        --display-name="nodejs" --description="Sample Node.js app"
 
 Change the route loadbalacing algorith from the default Source IP to roundrobin and disable cookies for testing.
 This will enabled testing of application loadbalacing from single workstation.
