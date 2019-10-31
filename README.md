@@ -1,4 +1,7 @@
-# Sample Python APP to demonstrate Rolling Updates & A/B Deployments
+# Sample Python Application to demonstrate loadbalancing & various application update strategy in Openshift 
+   - Rolling Updates
+   - Blue/Green Deployments
+   - A/B Deployments
 This will display the pod hostname which is servicing the web request
 
 This is a fork of the below github repository
