@@ -35,7 +35,8 @@ This will enabled testing of application loadbalacing from single workstation.
 ## Rolling Update/Rollback:
 Modify the application (https://github.com/dineshsadasivam/demoapp/tree/master/templates/hello.html) and trigger a new build for rolling update
     
-    $ oc deploy myapp --latest 
+    $ oc start-build demoapp
+    $ oc rollback demoapp 
 
 
 ## Blue-Green Deployments:
