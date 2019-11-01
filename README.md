@@ -28,10 +28,16 @@ This will enabled testing of application loadbalacing from single workstation.
     $ oc annotate route/demoapp haproxy.router.openshift.io/balance=roundrobin 
     $ oc annotate route/demoapp haproxy.router.openshift.io/disable_cookies=true 
 
-Command to validate load-balancing from CLI 
+Command to validate load-balancing and deployment changes from CLI 
 
     $ while true ; do curl http://demoapp-demoproject.router.default.svc.cluster.local 2>/dev/null |grep Hello ; done
+
+**Rolling Update/Rollback:**
+Modify the application (https://github.com/dineshsadasivam/demoapp/tree/master/templates/hello.html) and trigger a new build for rolling update
     
+    $ oc deploy myapp --latest 
+
+
 **Blue-Green Deployments:**
 
 The blue-green deployment strategy minimizes the time it takes to perform a deployment cutover by ensuring you have two versions of your application stacks available during the deployment. We can make use of the service and routing tiers to easily switch between the two running application stacks, hence it is very simple and fast to perform a rollback.
